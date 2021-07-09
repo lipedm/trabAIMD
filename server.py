@@ -8,7 +8,7 @@ sock.bind((udp_ip, udp_port))
 
 
 while True:
-    data, addr = sock.recvfrom(4096)
+    data, addr = sock.recvfrom(256)
     print("mensagem recebido: %s" % data)
     print(addr)
     if (data.decode("utf-8") == "exit"):

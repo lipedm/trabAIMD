@@ -14,13 +14,12 @@ while True:
 	msg = input("insira sua mensagem: ")
 	try :		
 		sock.sendto(msg.encode('utf-8'), (host, port))
-		reply = sock.recvfrom(4096)
-		print(reply)
+		reply = sock.recvfrom(256)
 		serverInfo = reply[1][0]
 		replyDecoded = reply[0].decode("utf-8")
 
-		# print("informações do servidor %s recebidas com sucesso" % serverInfo)
-		# print(replyDecoded)
+		print("informações do servidor %s recebidas com sucesso" % serverInfo)
+		print(replyDecoded)
 
 		if (replyDecoded == False):
 			break
