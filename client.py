@@ -3,6 +3,7 @@ import sys
 
 host = '172.31.16.25'
 port = 6006
+buffer = 64
 
 try:
 	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -14,7 +15,9 @@ while True:
 	msg = input("insira sua mensagem: ")
 	try :		
 		sock.sendto(msg.encode('utf-8'), (host, port))
-		reply = sock.recvfrom(256)
+		reply = sock.recvfrom(buffer)
+		print(reply)
+		print("buffer" + buffer)
 		serverInfo = reply[1][0]
 		replyDecoded = reply[0].decode("utf-8")
 
