@@ -19,8 +19,8 @@ while True:
 		serverInfo = reply[1][0]
 		replyDecoded = reply[0].decode("utf-8")
 
-		print("informações do servidor %s recebidas com sucesso" % serverInfo)
-		print(replyDecoded)
+		# print("informações do servidor %s recebidas com sucesso" % serverInfo)
+		# print(replyDecoded)
 
 		if (replyDecoded == False):
 			break
