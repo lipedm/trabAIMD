@@ -13,7 +13,7 @@ try:
         start = time.time()
         message = 'Ping #' + str(i) + " " + time.ctime(start)
         try:
-            sent = sock.sendto(message, server_addr)
+            sent = sock.sendto(message.encode("utf-8"), server_addr)
             print("Sent " + message)
             data, server = sock.recvfrom(4096)
             print("Received " + data)
