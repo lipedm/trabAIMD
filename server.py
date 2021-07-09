@@ -1,16 +1,22 @@
-import socket
-
-udp_ip = "172.31.16.25"
-udp_port = 6006
-buffer = 1
-
-sock = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
-sock.bind((udp_ip, udp_port))
+import random
+from socket import *
 
 
+host = '172.31.16.25'
+port = 6006
+
+serverSocket = socket(AF_INET, SOCK_DGRAM)
+serverSocket.bind((host, port))
+print("Started UDP server on port %d" % port)
 while True:
-    data, addr = sock.recvfrom(buffer)
-    print("mensagem recebida: %s" % data)
-    print(addr)
-    sendBack = data
-    sock.sendto(sendBack,addr)
+
+    rand = random.randint(0, 10)
+
+    message, address = serverSocket.recvfrom(1024)
+
+    message = message.upper()
+
+    if rand < 4:
+        continue
+
+    serverSocket.sendto(message, address)
