@@ -12,7 +12,7 @@ except socket.error:
 	sys.exit()
 
 while True:
-	msg = input("insira sua mensagem: ")
+	msg = "some bytes to test"
 	try :		
 		sock.sendto(msg.encode('utf-8'), (host, port))
 		reply = sock.recvfrom(buffer)
