@@ -17,7 +17,7 @@ while True:
 		sock.sendto(msg.encode('utf-8'), (host, port))
 		reply = sock.recvfrom(buffer)
 		print(reply)
-		print("mensagem recebido: %d" % buffer) 
+		print("buffer %d" % buffer) 
 		serverInfo = reply[1][0]
 		replyDecoded = reply[0].decode("utf-8")
 

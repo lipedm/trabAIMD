@@ -10,7 +10,7 @@ sock.bind((udp_ip, udp_port))
 
 while True:
     data, addr = sock.recvfrom(buffer)
-    print("mensagem recebido: %s" % data)
+    print("mensagem recebida: %s" % data)
     print(addr)
     sendBack = data
     sock.sendto(sendBack,addr)
