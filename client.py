@@ -16,7 +16,7 @@ try:
             sent = sock.sendto(message.encode("utf-8"), server_addr)
             print("Sent " + message)
             data, server = sock.recvfrom(4096)
-            print("Received " + data)
+            print("Received " + data.decode("utf-8"))
             end = time.time();
             elapsed = end - start
             print("RTT: " + str(elapsed) + " seconds\n")
