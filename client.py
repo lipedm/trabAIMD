@@ -1,5 +1,6 @@
 import socket
 import time
+import random
 
 host = '172.31.16.25'
 port = 6006
@@ -13,7 +14,7 @@ cwnd = 1
 try:
 	for i in range(1, 30):
 		start = time.time()
-		message = 'Ping #' + str(i) + " " + time.ctime(start)
+		message = random.random
 		try:
 			sent = sock.sendto(message.encode("utf-8"), server_addr)
 			print("Sent " + message)
