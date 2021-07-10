@@ -14,7 +14,7 @@ cwnd = 1
 try:
 	for i in range(1, 30):
 		start = time.time()
-		message = random.random
+		message = random.randint(1,999)
 		try:
 			sent = sock.sendto(message.encode("utf-8"), server_addr)
 			print("Sent " + message)
