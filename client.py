@@ -24,7 +24,7 @@ try:
 			print("Received " + data.decode("utf-8"))
 			end = time.time();
 			elapsed = end - start
-			cwnd += cwnd*cwnd
+			cwnd += cwnd
 			print("RTT: " + str(elapsed) + " seconds\n")
 			print("cwnd agora:" + str(cwnd) + "\n")
 
