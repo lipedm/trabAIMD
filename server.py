@@ -16,7 +16,4 @@ while True:
 
     message = message.upper()
 
-    if rand < 4:
-        continue
-
     serverSocket.sendto(message, address)
