@@ -31,6 +31,7 @@ try:
 			print("#" + str(i) + " Requested Time out\n")
 			print("#" + str(i) + " Congestion Detected\n")
 			cwnd = int(cwnd / 2)
+			print("cwnd agora:" + cwnd "\n")
 
 finally:
 	print("closing socket")
