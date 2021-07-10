@@ -27,7 +27,7 @@ try:
 		except socket.timeout:
 			print("#" + str(i) + " Requested Time out\n")
 			print("#" + str(i) + " Congestion Detected\n")
-			cwnd = cwnd / 2
+			cwnd = int(cwnd / 2)
 
 finally:
 	print("closing socket")
