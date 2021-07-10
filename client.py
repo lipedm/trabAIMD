@@ -16,10 +16,10 @@ try:
 		start = time.time()
 		message = random.randint(1,999)
 		try:
-			sent = sock.sendto(message.encode("utf-8"), server_addr)
+			sent = sock.sendto(message, server_addr)
 			print("Sent " + message)
 			data, server = sock.recvfrom(cwnd)
-			print("Received " + data.decode("utf-8"))
+			print("Received " + data)
 			end = time.time();
 			elapsed = end - start
 			cwnd = cwnd^2
