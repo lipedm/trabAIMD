@@ -26,13 +26,13 @@ try:
 			elapsed = end - start
 			cwnd = cwnd^2
 			print("RTT: " + str(elapsed) + " seconds\n")
-			print("cwnd agora:" + cwnd + "\n")
+			print("cwnd agora:" + str(cwnd) + "\n")
 
 		except socket.timeout:
 			print("#" + str(i) + " Requested Time out\n")
 			print("#" + str(i) + " Congestion Detected\n")
 			cwnd = int(cwnd / 2)
-			print("cwnd agora:" + cwnd + "\n")
+			print("cwnd agora:" + str(cwnd) + "\n")
 
 finally:
 	print("closing socket")
